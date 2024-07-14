@@ -121,5 +121,32 @@ namespace EmployeeMgmt1
             obj.Show();
             this.Hide();
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Departments departments = new Departments();
+            departments.Show();
+            this.Hide();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Departments departments = new Departments();
+            departments.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Employees employees = new Employees();
+            employees.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Employees employees = new Employees();
+            employees.Show();
+            this.Hide();
+        }
     }
 }

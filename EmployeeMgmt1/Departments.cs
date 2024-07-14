@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,10 +41,10 @@ namespace EmployeeMgmt1
                     Con.SetData(Query);
                     ShowDepartments();
                     MessageBox.Show("department addedd!!!");
-                    DepNameTb.Text = "";
-                }
+                        DepNameTb.Text = "";
+                    }
 
-            }
+                    }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -79,10 +80,10 @@ namespace EmployeeMgmt1
                     Con.SetData(Query);
                     ShowDepartments();
                     MessageBox.Show("department Updated!!!");
-                    DepNameTb.Text = "";
-                }
+                        DepNameTb.Text = "";
+                    }
 
-            }
+                    }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -105,10 +106,10 @@ namespace EmployeeMgmt1
                     Con.SetData(Query);
                     ShowDepartments();
                     MessageBox.Show("department Deleted!!!");
-                    DepNameTb.Text = "";
-                }
+                        DepNameTb.Text = "";
+                    }
 
-            }
+                    }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -134,6 +135,28 @@ namespace EmployeeMgmt1
         {
             Login obj=new Login();
             obj.Show();
+            this.Hide();
+        }
+
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Salaries salary = new Salaries();
+            salary.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Employees employees = new Employees();
+            employees.Show();
+            this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
             this.Hide();
         }
     }

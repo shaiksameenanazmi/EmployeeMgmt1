@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,13 +75,13 @@ namespace EmployeeMgmt1
 
                     Con.SetData(Query);
                     ShowEmp();
-                    MessageBox.Show("Employee added!");
-                    EmpNameTb.Text = "";
-                    DailySalTb.Text = "";
-                    GenCb.SelectedIndex = -1;
-                    DepCb.SelectedIndex = -1;
-                }
-            }
+                        MessageBox.Show("Employee added!");
+                        EmpNameTb.Text = "";
+                        DailySalTb.Text = "";
+                        GenCb.SelectedIndex = -1;
+                        DepCb.SelectedIndex = -1;
+                    }
+                    }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -91,25 +92,25 @@ namespace EmployeeMgmt1
         {
             try
             {
-                if (key==0)
+                if (key == 0)
                 {
                     MessageBox.Show("Missing Data!");
                 }
                 else
                 {
-                    
+
 
                     string Query = "Delete from EmployeeTb where EmpId={0}";
                     Query = string.Format(Query, key);
                     Con.SetData(Query);
                     ShowEmp();
-                    MessageBox.Show("Employee Deleted!");
-                    EmpNameTb.Text = "";
-                    DailySalTb.Text = "";
-                    GenCb.SelectedIndex = -1;
-                    DepCb.SelectedIndex = -1;
-                }
-            }
+                        MessageBox.Show("Employee Deleted!");
+                        EmpNameTb.Text = "";
+                        DailySalTb.Text = "";
+                        GenCb.SelectedIndex = -1;
+                        DepCb.SelectedIndex = -1;
+                    }
+                    }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -148,13 +149,13 @@ namespace EmployeeMgmt1
                     Query = string.Format(Query, Name, Gender, Dep, DOB, JDate, salary,key);
                     Con.SetData(Query);
                     ShowEmp();
-                    MessageBox.Show("Employee added!");
-                    EmpNameTb.Text = "";
-                    DailySalTb.Text = "";
-                    GenCb.SelectedIndex = -1;
-                    DepCb.SelectedIndex = -1;
-                }
-            }
+                        MessageBox.Show("Employee added!");
+                        EmpNameTb.Text = "";
+                        DailySalTb.Text = "";
+                        GenCb.SelectedIndex = -1;
+                        DepCb.SelectedIndex = -1;
+                    }
+                    }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -183,6 +184,34 @@ namespace EmployeeMgmt1
         {
             Login obj = new Login();
             obj.Show();
+            this.Hide();
+        }
+        private void label12_Click(object sender, EventArgs e)
+        {
+            Salaries salary=new Salaries();
+            salary.Show();
+            this.Hide();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            Departments departments = new Departments();
+            departments.Show();
+            this.Hide();
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Departments departments = new Departments();
+            departments.Show();
+            this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Salaries salary = new Salaries();
+            salary.Show();
             this.Hide();
         }
     }
